@@ -10,7 +10,7 @@ import Divider from './divider'
 export default function Header() {
   return (
     <header className='z-[999] relative '>
-      <motion.div className='fixed h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:w-5/6 sm:top-0 sm:h-[4.5rem]  sm:rounded-br-[4rem] '
+      <motion.div className='fixed h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-[#FFF] bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:w-full sm:top-0 sm:h-[4.5rem] sm:mr-[8.8rem] sm:rounded-br-[2rem] '
         initial={{ y: -100, x: 1, opacity: 0 }}
         animate={{ y: 0, x: 0, opacity: 1 }}
       >

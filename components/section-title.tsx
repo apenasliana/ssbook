@@ -1,10 +1,19 @@
-import React from 'react'
+import React from 'react';
 
-export default function SectionTitle(title: string, showAll: boolean) {
-  return (
-    <div className='flex items-baseline justify-around'>
-      <h2>{title}</h2>
-      <a><p>ver todos</p></a>
-    </div>
-  )
+interface SectionTitleProps {
+  title: string;
+  showAll: boolean;
 }
+
+const SectionTitle: React.FC<SectionTitleProps> = (props) => {
+  return (
+    <div className='flex items-start justify-between w-full'>
+      <h2 className='text-3xl' >{props.title}</h2>
+      <a className='text-base'>
+         ver todos
+      </a>
+    </div>
+  );
+};
+
+export default SectionTitle;
