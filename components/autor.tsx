@@ -9,7 +9,7 @@ interface AutorProps {
 const Autor: React.FC<AutorProps> = (props) =>  {
 
   return (
-    <div className='h-[4.4rem] w-[18rem] flex flex-none border-2 rounded-lg'>
+    <div className='h-[4.4rem] w-[18rem] flex flex-none  rounded-lg'>
       <Image src={props.src} alt="autor" width={68} height={68}>
       </Image>
 

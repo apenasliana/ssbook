@@ -5,7 +5,7 @@ import Library from "@/components/library";
 
 export default function Home() {
   return (
-    <main className="flex   max-w-80 flex-col">
+    <main className="flex   w-screen flex-col">
         <Header/>
         <div className="ml-[8.8rem] mt-[6rem]">
           <FavoriteBooks/>

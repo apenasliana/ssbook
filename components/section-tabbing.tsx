@@ -16,7 +16,7 @@ const tabs=[{
   
     return (
     <div className='font-bold flex-col items-center'>
-      <div className=' flex space-x-6'>
+      <div className=' flex items-center gap-6 h-12'>
           {tabs.map(function(data) {
           return (
             <h2 className='text-sm'>{data.title}</h2>

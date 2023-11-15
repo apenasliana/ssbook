@@ -6,6 +6,7 @@ import SectionTitle from './section-title'
 import Book from './book'
 import Autor from './autor'
 import BookCard from './book-card'
+import SectionButtons from './section-buttons'
 
 export default function Library() {
 
@@ -105,10 +106,10 @@ export default function Library() {
 
       <div>
         <SectionTitle title='Artistas favoritos' showAll={true}/>
-        <div className='flex my-6 flex-nowrap '>
+        <div className='flex my-6 flex-nowrap overflow-hidden gap-6 '>
           {autors.map(function(data) {
             return (
-              <div className='mr-6 mb-6'>
+              <div>
               <Autor name={data.name} numBooks={data.numBooks} src={data.src}/>
               </div>
             )
@@ -116,17 +117,18 @@ export default function Library() {
         </div>
       </div>
       <div >
-        <SectionTitle title='Biblioteca' showAll={false}/>
-        <div className=' flex my-6 flex-wrap '>
-          {books.map(function(data) {
-          return (
-            <div className='mr-6 mb-6'>
-              <BookCard title={data.title} autor={data.autor} src={data.src} />
 
-            </div>
-          )
-        })}
-      </div>
+          <SectionTitle title='Biblioteca' showAll={false}/>
+          <SectionButtons/>
+
+        <div className=' flex my-6 flex-wrap overflow-hidden gap-6 '>
+          {books.map(function(data) {
+            return (
+              <div >
+                <BookCard title={data.title} autor={data.autor} src={data.src} />
+              </div>
+            )})}
+        </div>
       </div>
     </div>
 

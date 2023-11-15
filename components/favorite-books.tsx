@@ -40,12 +40,12 @@ export default function FavoriteBooks() {
  //todo add api and scroll to right
 
   return (
-    <div className='flex-col mx-8 mb-8 h-auto space-y-2 mr-[10.8rem]'>
+    <div className='flex-col mx-8 mb-8 h-auto space-y-6 mr-[10.75rem]'>
       <SectionTabbing />
 
       <SectionTitle title={"Livros Favoritos"} showAll={true} />
       
-      <div className='flex space-x-6 object-contain'>
+      <div className='flex gap-6 object-contain overflow-hidden'>
           {books.map(function(data) {
           return (
             <Book title={data.title} autor={data.autor} src={data.src} />
