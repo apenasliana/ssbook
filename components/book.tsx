@@ -13,8 +13,8 @@ const Book: React.FC<BookProps> = (props) =>  {
       <Image src={props.src} alt="Book" width={136} height={198}>
       </Image>
       <div className='flex-col items-center mt-2  space-y-2'>
-        <h2 className='text-base' >{props.title}</h2>
-        <span className='text-sm text-gray-700'>{props.autor}</span>
+        <h2 className='text-base font-bold' >{props.title}</h2>
+        <span className='text-sm text-[#757575]'>{props.autor}</span>
       </div>
     </div>
   )

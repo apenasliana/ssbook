@@ -12,10 +12,10 @@ const tabs=[{
   ]
 
 
-const SectionTabbing: React.FC<SectionTabbingProps> = (props) =>  {
-
-  return (
-    <div className='flex-col items-center'>
+  const SectionTabbing: React.FC<SectionTabbingProps> = (props) =>  {
+  
+    return (
+    <div className='font-bold flex-col items-center'>
       <div className=' flex space-x-6'>
           {tabs.map(function(data) {
           return (

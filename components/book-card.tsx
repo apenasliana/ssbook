@@ -14,8 +14,8 @@ const BookCard: React.FC<BookCardProps> = (props) =>  {
       </Image>
 
       <div className='flex-col items-center ml-4 my-[1.25rem]  '>
-        <h2 className='text-base' >{props.title}</h2>
-        <span className='text-sm text-gray-700'>{props.autor}</span>
+        <h2 className='text-base font-bold' >{props.title}</h2>
+        <span className='text-sm text-[#555555] '>{props.autor}</span>
       </div>
     </div>
   )

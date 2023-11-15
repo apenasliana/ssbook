@@ -7,9 +7,9 @@ interface SectionTitleProps {
 
 const SectionTitle: React.FC<SectionTitleProps> = (props) => {
   return (
-    <div className='flex items-start justify-between w-full'>
-      <h2 className='text-3xl' >{props.title}</h2>
-      <a className='text-base'>
+    <div className='font-bold flex items-start justify-between w-full'>
+      <h2 className='text-3xl ' >{props.title}</h2>
+      <a className='text-base  text-[#A076F2]'>
          ver todos
       </a>
     </div>

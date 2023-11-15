@@ -14,8 +14,8 @@ const Autor: React.FC<AutorProps> = (props) =>  {
       </Image>
 
       <div className='flex-col items-center mx-4 mt-2  space-y-2'>
-        <h2 className='text-base' >{props.name}</h2>
-        <span className='text-sm text-gray-700'>{props.numBooks} livros</span>
+        <h2 className='text-base font-bold' >{props.name}</h2>
+        <span className='text-sm text-[#757575]'>{props.numBooks} livros</span>
       </div>
     </div>
   )
