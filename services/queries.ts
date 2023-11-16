@@ -14,9 +14,9 @@ export async function getFavBooks() {
       }
     }
   `
- const favBooks = await executeQuery(query) 
+  const favBooks = await executeQuery(query)
 
- return { books: favBooks.favoriteBooks}
+  return { books: favBooks.favoriteBooks }
 }
 
 export async function getFavAuthors() {
@@ -30,12 +30,12 @@ export async function getFavAuthors() {
       }
     }
   `
- const FavAuthors = await executeQuery(query) 
+  const FavAuthors = await executeQuery(query)
 
- return { authors: FavAuthors.favoriteAuthors}
+  return { authors: FavAuthors.favoriteAuthors }
 }
 
-export async function getBookById(id:number) {
+export async function getBookById(id: number) {
 
   const query = gql`
     query MinhaQuery {book(id:${id}){
@@ -47,9 +47,9 @@ export async function getBookById(id:number) {
   }
     }
   `
- const bookResult = await executeQuery(query) 
+  const bookResult = await executeQuery(query)
 
- return { book: bookResult.book}
+  return { book: bookResult.book }
 }
 
 export async function getUserPicture() {
@@ -59,9 +59,9 @@ export async function getUserPicture() {
       userPicture
     }
   `
- const userPic = await executeQuery(query) 
+  const userPic = await executeQuery(query)
 
- return { image: userPic.userPicture}
+  return { image: userPic.userPicture }
 }
 
 
