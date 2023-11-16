@@ -7,8 +7,15 @@ import Book from './book'
 import Autor from './autor'
 import BookCard from './book-card'
 import SectionButtons from './section-buttons'
+import createApolloClient from '@/apoloClient'
+import { gql } from '@apollo/client'
+
+
+
 
 export default function Library() {
+
+
 
   const autors=[
     {

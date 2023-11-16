@@ -9,18 +9,21 @@ export const metadata: Metadata = {
   description: 'Fullstack Dev',
 }
 
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={`${inter.className}
-       bg-[#d9d8d8] text-[#555] relative `}>
-
+    
+      <html lang="en">
+        <body className={`${inter.className}
+        bg-[#d9d8d8] text-[#555] relative `}>
         {children}
       </body>
     </html>
+    
+
   )
 }
