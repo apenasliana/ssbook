@@ -3,21 +3,15 @@ import React from 'react'
 
 interface IconButtonProps {
   text: string
+  icon: string
 }
-const icon = [
-  {
-    icon: 'iconName'
-  },
-  {
-    text: 'Emprestados'
-  }
-]
 
 const IconButton: React.FC<IconButtonProps> = props => {
   return (
-    <a className="flex items-center justify-center h-12 ">
+    <a className="flex items-center justify-center h-12 cursor-pointer">
       <Image
-        src="/iconAdicionar.svg"
+        className="h-[1.5rem] w-[1.5rem]"
+        src={props.icon}
         alt=""
         width={24}
         height={24}

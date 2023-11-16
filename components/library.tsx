@@ -1,137 +1,47 @@
-'use client'
-
 import React from 'react'
-import { motion } from 'framer-motion'
 import SectionTitle from './section-title'
 import Book from './book'
 import Autor from './autor'
 import BookCard from './book-card'
 import SectionButtons from './section-buttons'
-import createApolloClient from '@/apoloClient'
-import { gql } from '@apollo/client'
 
-export default function Library() {
-  const autors = [
-    {
-      name: 'NameName',
-      numBooks: 55,
-      src: '/autorPicture.png'
-    },
-    {
-      name: 'Name NameNameaA',
-      numBooks: 5,
-      src: '/autorPicture.png'
-    },
-    {
-      name: 'Name Name',
-      numBooks: 9,
-      src: '/autorPicture.png'
-    },
-    {
-      name: 'Name NameName',
-      numBooks: 8,
-      src: '/autorPicture.png'
-    },
-    {
-      name: 'Name NameNameName',
-      numBooks: 6,
-      src: '/autorPicture.png'
-    },
-    {
-      name: 'Name',
-      numBooks: 4,
-      src: '/autorPicture.png'
-    }
-  ]
+import { getAllBooks, getFavAuthors } from '@/services/queries'
 
-  const books = [
-    {
-      title: 'poggers',
-      autor: 'among us',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'asgfda',
-      autor: 'among  asfdus',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'poggers 2',
-      autor: 'amonaaag us',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'asgfda',
-      autor: 'among  asfdus',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'poggers 2',
-      autor: 'amonaaag us',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'asgfda',
-      autor: 'among  asfdus',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'poggers 2',
-      autor: 'amonaaag us',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'asgfda',
-      autor: 'among  asfdus',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'poggers 2',
-      autor: 'amonaaag us',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'pogger 3s',
-      autor: 'among u111s',
-      src: '/bookNormal.png'
-    },
-    {
-      title: 'book4',
-      autor: 'among124 us',
-      src: '/bookBIG.png'
-    },
-    {
-      title: 'book4',
-      autor: 'among124 us',
-      src: '/bookBIG.png'
-    },
-    {
-      title: 'book4',
-      autor: 'among124 us',
-      src: '/bookBIG.png'
-    }
-  ]
+interface Author {
+  name: string
+}
+interface BookData {
+  name: string
+  author: Author
+  cover: string
+}
+
+interface Authors {
+  name: string
+  booksCount: string
+  picture: string
+}
+
+export default async function Library() {
+  const allBooks = await getAllBooks()
+  const favAuthors = await getFavAuthors()
 
   return (
-    <motion.div
-      className=" h-screen p-8 border border-white border-opacity-40 bg-[#FFF]  bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:w-auto sm:top-0   sm:rounded-tl-[2rem] "
-      initial={{ y: -100, x: 1, opacity: 0 }}
-      animate={{ y: 0, x: 0, opacity: 1 }}
-    >
+    <div className=" h-screen p-8 border border-white border-opacity-40 bg-[#FFF]  bg-opacity-80 shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] sm:w-auto sm:top-0   sm:rounded-tl-[2rem] ">
       <div className="flex-col mr-[8.8rem]">
         <div>
           <SectionTitle
             title="Artistas favoritos"
             showAll={true}
           />
-          <div className="flex my-6 flex-nowrap overflow-hidden gap-6 ">
-            {autors.map(function (data) {
+          <div className="flex my-6 flex-wrap overflow-hidden gap-6 max-h-[4.375rem]">
+            {favAuthors.authors.map(function (data: Authors) {
               return (
                 <div>
                   <Autor
                     name={data.name}
-                    numBooks={data.numBooks}
-                    src={data.src}
+                    booksCount={data.booksCount}
+                    picture={data.picture}
                   />
                 </div>
               )
@@ -145,14 +55,14 @@ export default function Library() {
           />
           <SectionButtons />
 
-          <div className=" flex my-6 flex-wrap overflow-hidden gap-6 ">
-            {books.map(function (data) {
+          <div className=" flex my-6 flex-wrap overflow-hidden gap-6 h-[21.75rem] ">
+            {allBooks.books.map(function (data: BookData) {
               return (
                 <div>
                   <BookCard
-                    title={data.title}
-                    autor={data.autor}
-                    src={data.src}
+                    name={data.name}
+                    author={data.author.name}
+                    cover={data.cover}
                   />
                 </div>
               )
@@ -160,6 +70,6 @@ export default function Library() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

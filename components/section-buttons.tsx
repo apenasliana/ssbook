@@ -29,7 +29,7 @@ const SectionButtons: React.FC<SectionButtonsProps> = props => {
             <div
               className="h-8 py-[0.375rem] px-4 border rounded-full border-[#E0E0E0] items-center
             first:bg-[#A076F2] first:text-[#FFFFFF]
-           cursor-pointer select-none
+            cursor-pointer select-none
            hover:bg-[#A076F2] hover:text-[#FFFFFF] hover:bg-opacity-60 
             
             

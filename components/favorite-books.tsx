@@ -15,7 +15,6 @@ interface BookData {
 
 export default async function FavoriteBooks() {
   const fav = await getFavBooks()
-
   return (
     <div className="flex-col mx-8 mb-8 h-auto space-y-6 mr-[10.75rem]">
       <SectionTabbing />
@@ -25,7 +24,7 @@ export default async function FavoriteBooks() {
         showAll={true}
       />
 
-      <div className="flex gap-6 object-contain overflow-hidden">
+      <div className="flex gap-6 flex-wrap overflow-hidden max-h-[16.375rem]">
         {fav.books.map(function (data: BookData) {
           return (
             <Book

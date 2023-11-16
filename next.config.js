@@ -6,7 +6,7 @@ const nextConfig = {
         protocol: 'https',
         hostname: 'sscdn.co',
         port: '',
-        pathname: '/gcs/studiosol/2022/mobile/book/**',
+        pathname: '/gcs/studiosol/2022/mobile/**',
       },
     ],
   },

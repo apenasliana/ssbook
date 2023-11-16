@@ -35,6 +35,27 @@ export async function getFavAuthors() {
   return { authors: FavAuthors.favoriteAuthors }
 }
 
+export async function getAllBooks() {
+
+  const query = gql`
+    query allBooks {
+      allBooks{
+        name
+        author{
+          name
+        }
+        cover
+      }
+    }
+  `
+  const books = await executeQuery(query)
+
+  return { books: books.allBooks }
+}
+
+
+
+
 export async function getBookById(id: number) {
 
   const query = gql`

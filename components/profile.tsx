@@ -1,12 +1,15 @@
 import Image from 'next/image'
 import React from 'react'
 
-export default function Profile() {
+interface ProfileProps {
+  image: string
+}
+const Profile: React.FC<ProfileProps> = props => {
   return (
-    <div className="flex items-center gap-3">
+    <div className="flex items-center gap-3 cursor-pointer">
       <Image
         className="rounded-full border"
-        src="/profilePicture.png"
+        src={props.image}
         alt=""
         width={22}
         height={22}
@@ -15,3 +18,5 @@ export default function Profile() {
     </div>
   )
 }
+
+export default Profile
