@@ -1,28 +1,24 @@
 import Image from 'next/image'
 import React from 'react'
 
-
 interface IconButtonProps {
-  text: string;
+  text: string
+  icon: string
 }
-const icon=[{
-  icon:"iconName",},
-  {
-    text:"Emprestados"},
-    ]
-  
-  const IconButton: React.FC<IconButtonProps> = (props) =>  {
 
+const IconButton: React.FC<IconButtonProps> = props => {
   return (
-   
-    <a className='flex items-center justify-center h-12 '>
-      <Image src="/iconAdicionar.svg" alt="" width={24} height={24}>
-      </Image>
-      <p className=' inline ml-3 text-sm font-bold w-full ' >{props.text}</p>
+    <a className="flex items-center justify-center h-12 cursor-pointer">
+      <Image
+        className="h-[1.5rem] w-[1.5rem]"
+        src={props.icon}
+        alt=""
+        width={24}
+        height={24}
+      ></Image>
+      <p className=" inline ml-3 text-sm font-bold w-full ">{props.text}</p>
     </a>
-
   )
 }
-
 
 export default IconButton
