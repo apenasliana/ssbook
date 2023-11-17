@@ -25,14 +25,17 @@ export default async function FavoriteBooks() {
     mb-12
 
     md:mx-8 md:mb-8 md:h-auto md:space-y-6 
-    md:mr-[10.75rem]"
+    "
     >
-      <div className="  hidden md:block">
+      <div className="  hidden md:block md:mr-[10.75rem] ">
         <SectionTabbing />
-        <div className="  w-auto h-0 border border-[#E7E7E7]" />
+        <div className="   h-0 border border-[#E7E7E7]" />
       </div>
 
-      <div className="px-4">
+      <div
+        className="px-4    md:mr-[10.75rem]
+ "
+      >
         <SectionTitle
           title={'Livros Favoritos'}
           showAll={true}

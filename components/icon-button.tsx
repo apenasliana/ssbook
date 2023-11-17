@@ -8,7 +8,7 @@ interface IconButtonProps {
 
 const IconButton: React.FC<IconButtonProps> = props => {
   return (
-    <a className="flex items-center justify-center h-12 cursor-pointer">
+    <a className="flex items-center justify-center h-12 w-fit mx-2 cursor-pointer">
       <Image
         className="h-[1.5rem] w-[1.5rem]"
         src={props.icon}

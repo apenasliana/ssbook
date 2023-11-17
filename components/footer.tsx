@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="z-[999] fixed h-14 w-full bottom-0  bg-[#FFF] md:bg-[#A076F2]   md:px-[10.75rem]md:h-[4.5rem]   ">
       <div>
-        <div className="hidden md:flex md:items-center md:justify-between  md:py-4   ">
+        <div className="hidden md:flex md:items-center md:justify-between  md:py-4 p-[10.75rem]  ">
           <Image
             src="/whiteLogo.svg"
             alt="SSBook logo"
