@@ -6,6 +6,7 @@ export async function getFavBooks() {
   const query = gql`
     query favoriteBooks {
       favoriteBooks {
+        id
         name
         author{
           name
@@ -45,6 +46,7 @@ export async function getAllBooks() {
           name
         }
         cover
+        id
       }
     }
   `
@@ -59,14 +61,16 @@ export async function getAllBooks() {
 export async function getBookById(id: number) {
 
   const query = gql`
-    query MinhaQuery {book(id:${id}){
-    name
-    cover
-    description
-    category
-  }
-  }
-    }
+    query bookResult {
+      book(id:${id}) {
+        name
+        cover
+        author {
+          name
+        }
+        description    
+      }
+    }    
   `
   const bookResult = await executeQuery(query)
 
