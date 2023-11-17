@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function SearchBar() {
   return (
-    <div className="flex w-full max-w-md justify-between h-[2.5rem] pl-4 pr-2 py-[0.375rem] 	 border rounded-xl">
+    <div className=" hidden md:flex w-full max-w-md justify-between h-[2.5rem] pl-4 pr-2 py-[0.375rem] 	 border rounded-xl">
       <input
         className="text-black bg-transparent w-full focus:outline-none"
         placeholder="Busque um livro"

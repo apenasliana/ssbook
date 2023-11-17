@@ -3,11 +3,13 @@ import SectionTitle from './section-title'
 import Book from './book'
 import SectionTabbing from './section-tabbing'
 import { getFavBooks } from '@/services/queries'
+import Link from 'next/link'
 
 interface Author {
   name: string
 }
 interface BookData {
+  id: string
   name: string
   author: Author
   cover: string
@@ -16,23 +18,37 @@ interface BookData {
 export default async function FavoriteBooks() {
   const fav = await getFavBooks()
   return (
-    <div className="flex-col mx-8 mb-8 h-auto space-y-6 mr-[10.75rem]">
-      <SectionTabbing />
+    <div
+      className="flex-col 
+    mt-8
+    w-full
+    mb-12
 
-      <SectionTitle
-        title={'Livros Favoritos'}
-        showAll={true}
-      />
+    md:mx-8 md:mb-8 md:h-auto md:space-y-6 
+    md:mr-[10.75rem]"
+    >
+      <div className="  hidden md:block">
+        <SectionTabbing />
+        <div className="  w-auto h-0 border border-[#E7E7E7]" />
+      </div>
 
-      <div className="flex gap-6 flex-wrap overflow-hidden max-h-[16.375rem]">
+      <div className="px-4">
+        <SectionTitle
+          title={'Livros Favoritos'}
+          showAll={true}
+        />
+      </div>
+      <div className="overflow-x-scroll px-4 max-h-[16.375rem] flex gap-5 md:flex-wrap  md:gap-6 md:overflow-hidden">
         {fav.books.map(function (data: BookData) {
           return (
-            <Book
-              key={data.name}
-              name={data.name}
-              author={data.author.name} // Accessing the name property directly
-              cover={data.cover}
-            />
+            <Link href={{ pathname: '/book', query: { id: `${data.id}` } }}>
+              <Book
+                key={data.id}
+                name={data.name}
+                author={data.author.name}
+                cover={data.cover}
+              />
+            </Link>
           )
         })}
       </div>

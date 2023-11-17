@@ -23,7 +23,7 @@ const buttons = [
 const SectionButtons: React.FC<SectionButtonsProps> = props => {
   return (
     <div className="my-6">
-      <div className="flex gap-4 ">
+      <div className="flex gap-4 overflow-y-scroll md:overflow-y-visible">
         {buttons.map(function (data) {
           return (
             <div
